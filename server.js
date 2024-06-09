@@ -18,7 +18,13 @@ const app = express();
 
 //middlewares
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://blood-bank-app-40i2.onrender.com",
+    headers: ["Content-Type"],
+    credentials: true,
+  })
+);
 app.use(morgan("dev"));
 
 //routes
